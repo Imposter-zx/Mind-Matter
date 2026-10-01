@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F7F3E8;
+  color: #292923;
+  font-family: 'Inter', 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* RTL Global Adjustments */
+[dir="rtl"] {
+  font-family: 'IBM Plex Sans Arabic', 'Noto Naskh Arabic', sans-serif;
+}
+
+[dir="rtl"] .font-serif {
+  font-family: 'Noto Naskh Arabic', 'Cormorant Garamond', Georgia, serif;
+  line-height: 1.65;
+}
+
+[dir="rtl"] .font-sans {
+  font-family: 'IBM Plex Sans Arabic', 'Inter', sans-serif;
+}
+
+/* Warm Parchment Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F3E8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D8CEB3;
+  border-radius: 9999px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C7AE5D;
+}
+
+/* Warm Editorial Card Styles */
+.warm-card {
+  background: rgba(255, 253, 244, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(81, 81, 59, 0.12);
+  box-shadow: 0 4px 20px -2px rgba(81, 81, 59, 0.05);
+}
+
+.warm-card-elevated {
+  background: rgba(255, 254, 248, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(81, 81, 59, 0.16);
+  box-shadow: 0 12px 32px -4px rgba(81, 81, 59, 0.09);
+}
+
+.warm-card-subtle {
+  background: rgba(239, 233, 215, 0.6);
+  border: 1px solid rgba(81, 81, 59, 0.09);
+}
+
+/* Warm Gold Focus Outline */
+*:focus-visible {
+  outline: 2px solid #C7AE5D;
+  outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
