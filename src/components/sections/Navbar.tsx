@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, BookOpen, Compass } from 'lucide-react';
+import { Menu, X, BookOpen, Compass, Github } from 'lucide-react';
 import { PerformanceSelector } from '../ui/PerformanceSelector';
 import { LanguageSwitcher } from '../ui/LanguageSwitcher';
 import { useAudio } from '../../hooks/useAudio';
@@ -136,11 +136,32 @@ export const Navbar: React.FC<NavbarProps> = ({
             <BookOpen className="w-3.5 h-3.5 text-warm-goldMuted" />
             <span className="hidden xl:inline">{t.common.sources}</span>
           </button>
+
+          <a
+            href="https://github.com/Imposter-zx"
+            target="_blank"
+            rel="noopener noreferrer"
+            onMouseEnter={playHover}
+            className="p-1.5 sm:p-2 rounded-full text-warm-olive hover:text-warm-ink bg-warm-secondary/80 hover:bg-warm-sand border border-warm-border transition-all shadow-warm-sm"
+            title="GitHub: Imposter-zx (ZORD-zx)"
+            aria-label="GitHub Imposter-zx"
+          >
+            <Github className="w-3.5 h-3.5" />
+          </a>
         </div>
 
         {/* Mobile & Tablet Controls */}
         <div className="flex items-center gap-2 xl:hidden shrink-0">
           <LanguageSwitcher />
+          <a
+            href="https://github.com/Imposter-zx"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-1.5 sm:p-2 rounded-xl text-warm-olive bg-warm-secondary border border-warm-border"
+            title="GitHub: Imposter-zx"
+          >
+            <Github className="w-4 h-4" />
+          </a>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-1.5 sm:p-2 rounded-xl text-warm-olive bg-warm-secondary border border-warm-border"

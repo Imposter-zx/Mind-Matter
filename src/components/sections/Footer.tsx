@@ -1,5 +1,5 @@
 import React from 'react';
-import { Compass, BookOpen } from 'lucide-react';
+import { Compass, BookOpen, Github } from 'lucide-react';
 import { PerformanceSelector } from '../ui/PerformanceSelector';
 import { useAudio } from '../../hooks/useAudio';
 import { useTranslation } from '../../i18n';
@@ -34,6 +34,19 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAbout, onOpenReferences })
             <p className="font-sans text-xs text-warm-inkMuted leading-relaxed max-w-lg">
               {t.footer.mission}
             </p>
+
+            <div className="pt-1">
+              <a
+                href="https://github.com/Imposter-zx"
+                target="_blank"
+                rel="noopener noreferrer"
+                onMouseEnter={playHover}
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-warm-card border border-warm-border text-warm-ink hover:text-warm-olive hover:border-warm-goldMuted transition-all text-xs font-sans shadow-warm-sm group"
+              >
+                <Github className="w-3.5 h-3.5 text-warm-olive group-hover:scale-110 transition-transform" />
+                <span>Created by <strong className="font-semibold text-warm-ink">Imposter-zx (ZORD-zx)</strong></span>
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -99,7 +112,19 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAbout, onOpenReferences })
 
         {/* Bottom Sub-Footer */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-warm-border font-sans text-xs text-warm-oliveLight">
-          <span>© {new Date().getFullYear()} {t.footer.copyright}</span>
+          <div className="flex flex-wrap items-center gap-2">
+            <span>© {new Date().getFullYear()} {t.footer.copyright}</span>
+            <span>•</span>
+            <span>Author:</span>
+            <a
+              href="https://github.com/Imposter-zx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-warm-ink hover:text-warm-olive underline decoration-warm-goldMuted/60 transition-colors"
+            >
+              Imposter-zx (ZORD-zx)
+            </a>
+          </div>
           <div className="flex flex-wrap items-center gap-4">
             <PerformanceSelector />
             <span>{t.footer.techStack}</span>
@@ -109,3 +134,4 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAbout, onOpenReferences })
     </footer>
   );
 };
+
